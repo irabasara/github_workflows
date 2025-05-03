@@ -1,0 +1,26 @@
+name: Second Workflow
+on: [push]
+
+jobs:
+  run-my-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run my command
+        run: |
+                echo "Hello, World!"
+                echo "This is my first GitHub Action workflow."
+  run-parallel-command:
+    runs-on: windows-latest
+    steps:
+      - name: Display Node version
+        run: node -v
+  run-second-command:
+    runs-on: macos-latest
+    needs: run-my-command
+    steps:
+      - name: Display Node version on MacOS
+        run: node -v
+  
