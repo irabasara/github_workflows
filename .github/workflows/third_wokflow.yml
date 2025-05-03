@@ -5,8 +5,11 @@ jobs:
   run-my-command:
     runs-on: ubuntu-latest
     steps:
-      - name: Command in multiline
+      - name: Copy Repo
         run : |
           pwd
           ls -a
+      - uses: actions/checkout@v4
+      - name: Copy Repo
+        run : ls -a
 
