@@ -1,0 +1,12 @@
+name: Second Workflow
+on: [push]
+
+jobs:
+  run-my-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Command in multiline
+        run : |
+          pwd
+          ls -a
+
